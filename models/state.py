@@ -14,7 +14,3 @@ class State(BaseModel):
                 setattr(self, k, v)
         else:
             return
-
-
-
-

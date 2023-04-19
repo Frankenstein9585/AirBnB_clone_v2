@@ -13,4 +13,3 @@ class Amenity(BaseModel):
                 setattr(self, k, v)
         else:
             return
-

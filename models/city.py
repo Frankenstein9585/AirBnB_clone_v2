@@ -15,4 +15,3 @@ class City(BaseModel):
                 setattr(self, k, v)
         else:
             return
-

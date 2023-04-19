@@ -17,5 +17,3 @@ class User(BaseModel):
                 setattr(self, k, v)
         else:
             return
-
-
