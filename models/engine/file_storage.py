@@ -56,3 +56,4 @@ class FileStorage:
             for k, v in dict(self.__objects).items():
                 if v == obj:
                     del self.__objects[k]
+            self.save()
