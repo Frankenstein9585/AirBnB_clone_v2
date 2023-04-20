@@ -3,7 +3,7 @@
 import cmd
 import sys
 from models.base_model import BaseModel
-from models.__init__ import storage
+from models.__init__ import storage, obj_dict
 from models.user import User
 from models.place import Place
 from models.state import State
@@ -140,9 +140,10 @@ class HBNBCommand(cmd.Cmd):
                 #     value = value.replace('\\"', '')
 
                 object_dict.update({key: value})
-        print(object_dict)
+        # print(object_dict)
 
         new_instance = HBNBCommand.classes[args_[0]](obj_dict=object_dict)
+        storage.new(new_instance)
         storage.save()
         print(new_instance.id)
         storage.save()
@@ -227,11 +228,11 @@ class HBNBCommand(cmd.Cmd):
             if args not in HBNBCommand.classes:
                 print("** class doesn't exist **")
                 return
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in obj_dict.items():
                 if k.split('.')[0] == args:
                     print_list.append(str(v))
         else:
-            for k, v in storage._FileStorage__objects.items():
+            for k, v in obj_dict.items():
                 print_list.append(str(v))
 
         print(print_list)
