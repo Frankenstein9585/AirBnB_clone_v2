@@ -12,9 +12,9 @@ from models.review import Review
 from models.state import State
 from models.user import User
 
-# classes = {"User": User, "City": City, "State":
+# classes = {, "City": City, "State":
 # State, "Place": Place, "Review": Review, "Amenity": Amenity}
-classes = {"City": City, "State": State}
+classes = {"City": City, "State": State, "User": User}
 
 
 class DBStorage:
