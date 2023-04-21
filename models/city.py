@@ -11,9 +11,8 @@ from models.state import State
 class City(BaseModel, Base):
     """ The city class, contains state ID and name """
     __tablename__ = 'cities'
-    state_id = Column(String(60), nullable=False)
-    name = Column(String(128),
-                  ForeignKey(State.id, ondelete='CASCADE'), nullable=False)
+    state_id = Column(String(60), ForeignKey('states.id'), nullable=False)
+    name = Column(String(128), nullable=False)
 
     def __init__(self, obj_dict=None, *args, **kwargs):
         super().__init__(*args, **kwargs)
