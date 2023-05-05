@@ -17,14 +17,6 @@ cat > /data/web_static/releases/test/index.html <<EOF
     Holberton School
   </body>
 </html>
-ubuntu@89-web-01:~/$ curl localhost/hbnb_static/index.html
-<html>
-  <head>
-  </head>
-  <body>
-    Holberton School
-  </body>
-</html>
 EOF
 
 if [ -L /data/web_static/current ];
