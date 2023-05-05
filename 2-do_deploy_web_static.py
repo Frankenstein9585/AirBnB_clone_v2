@@ -1,4 +1,4 @@
-#!usr/bin/python3
+#!/usr/bin/python3
 """Distributes the content of the archive to the web servers"""
 from fabric.api import *
 import os
