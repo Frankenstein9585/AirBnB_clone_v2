@@ -1,9 +1,9 @@
 #!/usr/bin/python3
 """Distributes the content of the archive to the web servers"""
-from fabric.api import *
+from fabric.api import sudo, put, env
 import os
 
-# env.hosts = ['ubuntu@100.26.216.194']
+env.hosts = ['ubuntu@100.26.216.194']
 
 
 def do_deploy(archive_path):
