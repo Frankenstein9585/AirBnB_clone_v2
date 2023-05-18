@@ -27,13 +27,13 @@ def do_deploy(archive_path):
             return False
         put(archive_path, '/tmp/')
         archive_folder = archive_path.split('.')[0].split('/')[-1]
-        run('sudo mkdir -p /data/web_static/releases/{}'.format(archive_folder))
-        run(f'sudo tar -xzf /tmp/{archive_folder}.tgz -C /data/web_static/releases/{archive_folder}/')
-        run(f'sudo rm /tmp/{archive_folder}.tgz')
-        run(f'sudo mv /data/web_static/releases/{archive_folder}/web_static/* /data/web_static/releases/{archive_folder}')
-        run(f'sudo rm -rf /data/web_static/releases/{archive_folder}/web_static/')
-        run('sudo rm -rf /data/web_static/current')
-        run(f'sudo ln -s /data/web_static/releases/{archive_folder} /data/web_static/current')
+        sudo('mkdir -p /data/web_static/releases/{}'.format(archive_folder))
+        sudo(f'tar -xzf /tmp/{archive_folder}.tgz -C /data/web_static/releases/{archive_folder}/')
+        sudo(f'rm /tmp/{archive_folder}.tgz')
+        sudo(f'mv /data/web_static/releases/{archive_folder}/web_static/* /data/web_static/releases/{archive_folder}')
+        sudo(f'rm -rf /data/web_static/releases/{archive_folder}/web_static/')
+        sudo('rm -rf /data/web_static/current')
+        sudo(f'ln -s /data/web_static/releases/{archive_folder} /data/web_static/current')
         print('New version deployed!')
         return True
     except:
