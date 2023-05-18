@@ -5,7 +5,7 @@ from flask import Flask
 app = Flask(__name__)
 
 
-@app.route('/')
+@app.route('/', strict_slashes=False)
 def display():
     """Displays some text on the browser"""
     return 'Hello HBNB!'
