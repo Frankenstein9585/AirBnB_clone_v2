@@ -36,6 +36,3 @@ else:
                 if value.state_id == self.id:
                     city_list.append(value)
             return city_list
-
-
-
