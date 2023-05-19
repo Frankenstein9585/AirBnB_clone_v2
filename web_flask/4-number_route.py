@@ -21,7 +21,22 @@ def hbnb():
 def c(text):
     """Display C followed by the value of the text variable"""
     text = str.replace(text, '_', ' ')
-    return 'C {}'.format(text)
+    return f'C {text}'
+
+
+@app.route('/python/', strict_slashes=False, defaults={'text': 'is_cool'})
+@app.route('/python/<text>', strict_slashes=False)
+def python(text):
+    """Display C followed by the value of the text variable"""
+    text = text.replace('_', ' ')
+    return f'Python {text}'
+
+
+@app.route('/number/<int:n>', strict_slashes=False)
+def number(n):
+    """Print n only if it's an integer"""
+    if type(n) == int:
+        return f'{n} is a number'
 
 
 if __name__ == '__main__':
