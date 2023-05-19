@@ -21,7 +21,7 @@ def hbnb():
 def c(text):
     """Display C followed by the value of the text variable"""
     text = str.replace(text, '_', ' ')
-    return f'C {text}'
+    return 'C {}'.format(text)
 
 
 @app.route('/python/', strict_slashes=False, defaults={'text': 'is_cool'})
@@ -29,14 +29,14 @@ def c(text):
 def python(text):
     """Display C followed by the value of the text variable"""
     text = text.replace('_', ' ')
-    return f'Python {text}'
+    return 'Python {}'.format(text)
 
 
 @app.route('/number/<int:n>', strict_slashes=False)
 def number(n):
     """Print n only if it's an integer"""
     if type(n) == int:
-        return f'{n} is a number'
+        return '{} is a number'.format(n)
 
 
 @app.route('/number_template/<int:n>', strict_slashes=False)
