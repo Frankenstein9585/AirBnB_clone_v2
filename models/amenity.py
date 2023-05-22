@@ -12,7 +12,7 @@ if getenv('HBNB_TYPE_STORAGE') == 'db':
         __tablename__ = 'amenities'
         name = Column(String(128), nullable=False)
 
-        place_amenities = relationship('Place', secondary=place_amenity)
+        place_amenities = relationship('Place', secondary=place_amenity, overlaps="amenities")
 
         def __init__(self, obj_dict=None, *args, **kwargs):
             super().__init__(*args, **kwargs)
