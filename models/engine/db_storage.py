@@ -66,6 +66,8 @@ class DBStorage:
     def delete(self, obj=None):
         if obj:
             self.__session.delete(obj)
+        else:
+            return None
 
     def reload(self):
         Base.metadata.create_all(bind=self.__engine)
@@ -75,4 +77,5 @@ class DBStorage:
         self.__session = Session()
 
     def close(self):
+        """Closes the current session"""
         self.__session.close()

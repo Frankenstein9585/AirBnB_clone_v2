@@ -7,6 +7,8 @@ from os import environ
 from sqlalchemy.orm import declarative_base
 from sqlalchemy import Column, String, Integer, DateTime
 
+import models
+
 Base = declarative_base()
 
 
