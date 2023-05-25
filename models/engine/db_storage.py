@@ -30,7 +30,7 @@ class DBStorage:
             .format(getenv('HBNB_MYSQL_USER'),
                     getenv('HBNB_MYSQL_PWD'),
                     getenv('HBNB_MYSQL_DB')),
-            pool_pre_ping=True
+            pool_pre_ping=True, connect_args={"charset": "latin1"}
         )
 
         # Session = sessionmaker(bind=self.__engine)
