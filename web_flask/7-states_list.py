@@ -1,9 +1,6 @@
 #!/usr/bin/python3
 """
-Simple Flask Web app that retrieves states from the db
-It can also cook beans and fry egg if you so please
-because I dunno why you're saying that my module is not
-documented
+This simple Flask Web app retrieves states from the db
 """
 
 from flask import Flask, render_template
@@ -15,14 +12,17 @@ app = Flask(__name__)
 
 @app.teardown_appcontext
 def app_teardown(exception):
-    """This removes the current session after each request"""
-
+    """
+    This removes the current session after each request
+    """
     storage.close()
 
 
 @app.route('/states_list', strict_slashes=False)
 def states_list():
-    """This retrieves the states from the database"""
+    """
+    This retrieves the states from the database
+    """
 
     states = storage.all(State)
     sorted_states = sorted(states, key=lambda s: s.name)
