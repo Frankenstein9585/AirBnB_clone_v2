@@ -1,6 +1,9 @@
 #!/usr/bin/python3
 """
 Simple Flask Web app that retrieves states from the db
+It can also cook beans and fry egg if you so please
+because I dunno why you're saying that my module is not
+documented
 """
 from flask import Flask, render_template
 from models import storage
